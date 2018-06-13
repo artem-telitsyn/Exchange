@@ -15,9 +15,10 @@ public class AccountManager {
     public AccountManager(ExchangeCurrency exchangeCurrency) {
         this.exchangeCurrency = exchangeCurrency;
     }
-
+// Обычно я называю hashMapы по шаблону содержимое_по_ключу. Т.е. в данном случае accountsByLogin. 
+// Так сразу очевидно, что и где лежит
     public void createAccount(HashMap accountLogin, String login, String role, Permission permission) {
-
+// Есть enum Permission. Может внести эти константы в него?
         if (login != null && role != null && (role.equals("admin") || role.equals("client"))) {
             Account account = new Account();
             accountLogin.put(login, account);
@@ -38,6 +39,7 @@ public class AccountManager {
 
     public Account logIn(HashMap accountLogin, String login) {
         if (login != null) {
+            // Если бы HashMap был генерализован <String, Account>, то приведение типов делать было бы не надо
             Account account = (Account) accountLogin.get(login);
             if (account != null) {
                 Menu.permission = account.getRole();
@@ -65,6 +67,7 @@ public class AccountManager {
 
     public void getCurrentAccountCurrencyStatus(Account account, String currency) {
         if (account != null) {
+            // типы валют лучше вынести в enum, чтобы не было констант в коде
             if (currency.equals("ALL")) {
                 System.out.println(account.getRub() + " RUB");
                 System.out.println(account.getUsd() + " USD");
