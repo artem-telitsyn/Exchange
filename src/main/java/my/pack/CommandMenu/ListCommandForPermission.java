@@ -2,6 +2,8 @@ package my.pack.CommandMenu;
 
 import my.pack.Account.Account;
 
+// Список команд не меняется по ходу жизни всего приложения. Может стоит внести список всех доступных команд под конкретный enum
+// с ролью пользователя?
 public class ListCommandForPermission {
 
     public CommandMenu[] getListCommandForPermission(Account account) {
