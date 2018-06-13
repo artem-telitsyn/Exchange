@@ -16,11 +16,15 @@ public class Main {
         HashMap accountLogin = new HashMap<String, Account>();
         ExchangeCurrency exchangeCurrency = new ExchangeCurrency();
         Account account = null;
+        // 1. зачем передавать account равный null?
+        // 2. Переносы строк при инициализации конструктора
         Menu menu = new Menu(account, new AccountManager(exchangeCurrency), new DepositCurrency(), exchangeCurrency, accountLogin, new ListCommandForPermission());
         InputReader inputReader = new InputReader();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         menu.printHelp(account);
+        // Видимо flagExit меняется внутри меню, что по сути является side effectom, да и вообще крайне неожиданно.
+        // лучше возвращать из метода флаг о том, продолжать ли дальше считывать, или нет
         while (flagExit) {
             menu.selectItemFromMenu(inputReader.inputReader(reader));
         }
