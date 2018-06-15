@@ -16,11 +16,11 @@ public class AccountManager {
         this.exchangeCurrency = exchangeCurrency;
     }
 
-    public void createAccount(HashMap accountLogin, String login, String role, Permission permission) {
+    public void createAccount(HashMap<String, Account> accountByLogin, String login, String role, Permission permission) {
 
         if (login != null && role != null && (role.equals("admin") || role.equals("client"))) {
-            Account account = new Account();
-            accountLogin.put(login, account);
+            Account account = new Account(new HashMap<String, BigDecimal>());
+            accountByLogin.put(login, account);
             Permission per = permission.getPermission(role);
             account.setRole(per);
             account.setLogin(login);
@@ -36,9 +36,9 @@ public class AccountManager {
         }
     }
 
-    public Account logIn(HashMap accountLogin, String login) {
+    public Account logIn(HashMap<String, Account> accountByLogin, String login) {
         if (login != null) {
-            Account account = (Account) accountLogin.get(login);
+            Account account = accountByLogin.get(login);
             if (account != null) {
                 Menu.permission = account.getRole();
                 System.out.println("Пользователь с логином " + login + " успешно вошел в систему");
@@ -65,7 +65,7 @@ public class AccountManager {
 
     public void getCurrentAccountCurrencyStatus(Account account, String currency) {
         if (account != null) {
-            if (currency.equals("ALL")) {
+  /*          if (currency.equals("ALL")) {
                 System.out.println(account.getRub() + " RUB");
                 System.out.println(account.getUsd() + " USD");
                 System.out.println(account.getEur() + " EUR");
@@ -79,7 +79,25 @@ public class AccountManager {
                 System.out.println("Укажите валюту");
             } else {
                 System.out.println("Данная валюта не поддерживается");
+            }*/
+
+            if (currency.equals("ALL")) {
+                System.out.println(account.getAccountCurrency("RUB") + " RUB");
+                System.out.println(account.getAccountCurrency("USD") + " USD");
+                System.out.println(account.getAccountCurrency("EUR") + " EUR");
+            } else if (currency.equals("RUB")) {
+                System.out.println(account.getAccountCurrency("RUB") + " RUB");
+            } else if (currency.equals("EUR")) {
+                System.out.println(account.getAccountCurrency("EUR") + " EUR");
+            } else if (currency.equals("USD")) {
+                System.out.println(account.getAccountCurrency("USD") + " USD");
+            } else if (currency.equals(null)) {
+                System.out.println("Укажите валюту");
+            } else {
+                System.out.println("Данная валюта не поддерживается");
             }
+
+
         } else {
             System.out.println("Необходимо создать счет");
         }
@@ -144,9 +162,9 @@ public class AccountManager {
     public void purchaseEurUsd(Account account, BigDecimal amountUsd) {
         try {
             if ((account.getUsd().compareTo(amountUsd)) >= 0) {
-                amount = amountUsd.multiply(exchangeCurrency.getEurRurRate());
-                account.setEur(account.getEur().subtract(amountUsd));
-                account.setRub(account.getRub().add(amount));
+                amount = amountUsd.multiply(exchangeCurrency.getEurUsdRate());
+                account.setUsd(account.getUsd().subtract(amountUsd));
+                account.setEur(account.getEur().add(amount));
             } else {
                 System.out.println("Недостаточно средств на счету");
             }
@@ -165,6 +183,23 @@ public class AccountManager {
                 System.out.println("Недостаточно средств на счету");
             }
         } catch (NullPointerException e) {
+            System.out.println("Необходимо создать счет");
+        }
+    }
+
+    public void purchaseCurrency (Account account, BigDecimal amount, String firstCurrency, String secondCurrency) {
+        if (account != null) {
+            if ((account.getAccountCurrency(secondCurrency).compareTo(amount)) >= 0) {
+                BigDecimal a = exchangeCurrency.getCurrencyRate(firstCurrency+"/"+secondCurrency);
+                this.amount = amount.divide(exchangeCurrency.getCurrencyRate(firstCurrency+"/"+secondCurrency),2,2);
+                BigDecimal b = account.getAccountCurrency(secondCurrency).subtract(amount);
+                BigDecimal c =  account.getAccountCurrency(firstCurrency).add(this.amount);
+                account.setAccountCurrency(secondCurrency, account.getAccountCurrency(secondCurrency).subtract(amount));
+                account.setAccountCurrency(firstCurrency, account.getAccountCurrency(firstCurrency).add(this.amount));
+            } else {
+                System.out.println("Недостаточно средств на счету");
+            }
+        } else {
             System.out.println("Необходимо создать счет");
         }
     }

@@ -1,17 +1,24 @@
 package my.pack;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 
 public class ExchangeCurrency {
 
     private BigDecimal usdRurRate;
     private BigDecimal eurRurRate;
     private BigDecimal eurUsdRate;
+    private HashMap<String, BigDecimal> currencyRate;
 
-    public ExchangeCurrency () {
-        usdRurRate = new BigDecimal(60);
-        eurRurRate = new BigDecimal(70);
-        eurUsdRate = new BigDecimal(0.857);
+    public ExchangeCurrency (HashMap currencyRate) {
+        this.currencyRate = currencyRate;
+        this.currencyRate.put("USD/RUB", BigDecimal.valueOf(60));
+        this.currencyRate.put("EUR/RUB", BigDecimal.valueOf(70));
+        this.currencyRate.put("RUB/USD", BigDecimal.valueOf(1).divide((BigDecimal) currencyRate.get("USD/RUB"),2,2));
+        this.currencyRate.put("RUB?EUR", BigDecimal.valueOf(1).divide((BigDecimal) currencyRate.get("EUR/RUB"),2,2));
+        this.usdRurRate = new BigDecimal(60);
+        this.eurRurRate = new BigDecimal(70);
+        this.eurUsdRate = new BigDecimal(0.857);
     }
 
     public BigDecimal getEurRurRate() {
@@ -36,6 +43,14 @@ public class ExchangeCurrency {
 
     public void setEurUsdRate(BigDecimal eurUsdRate) {
         this.eurUsdRate = eurUsdRate;
+    }
+
+    public BigDecimal getCurrencyRate(String currency) {
+        return currencyRate.get(currency);
+    }
+
+    public void setCurrencyRate(String currency, BigDecimal currencyRate) {
+        this.currencyRate.put(currency, currencyRate);
     }
 
     public void getExchangeRate() {
