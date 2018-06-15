@@ -50,7 +50,7 @@ public class Menu {
     public boolean checkPermission(Account account, CommandMenu command) {
         CommandMenu[] listCommand = listCommandForPermission.getListCommandForPermission(account);
         if (command == CommandMenu.DEFAULT) {
-            System.out.println(command.getValue());
+            System.out.println(command.getDescription());
             return false;
         } else if (account != null && command != null && permission != null) {
             if (compareCommand(command, listCommand)) {
@@ -69,57 +69,60 @@ public class Menu {
         return false;
     }
 
-    public void selectItemFromMenu(InputReaderDto inputReaderDto) {
-        CommandMenu command = CommandMenu.getMenu(inputReaderDto.command);
+    public boolean selectItemFromMenu(InputReaderDto inputReaderDto) {
+        CommandMenu command = CommandMenu.getMenu(inputReaderDto.getCommand());
         if (checkPermission(account, command)) {
             switch (command) {
                 case HELP:
                     printHelp(account);
-                    break;
+                    return true;
                 case CREATE_ACCOUNT:
-                    accountManager.createAccount(accountLogin, inputReaderDto.parameter[0], inputReaderDto.parameter[1], permission);
-                    break;
+                    accountManager.createAccount(accountLogin, inputReaderDto.getParameter()[0], inputReaderDto.getParameter()[1], permission);
+                    return true;
                 case ACCOUNT_STATUS_CURRENCY:
-                    accountManager.getCurrentAccountCurrencyStatus(account, inputReaderDto.parameter[0]);
-                    break;
+                    accountManager.getCurrentAccountCurrencyStatus(account, inputReaderDto.getParameter()[0]);
+                    return true;
                 case DEPOSIT_RUB:
-                    depositCurrency.depositRub(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    depositCurrency.depositRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case EXCHANGE_RATE:
                     exchangeCurrency.getExchangeRate();
-                    break;
+                    return true;
                 case PURCHASE_RUB_USD:
-                    accountManager.purchaseRubUsd(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseRubUsd(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case PURCHASE_USD_RUB:
-                    accountManager.purchaseUsdRub(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseUsdRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case PURCHASE_RUB_EUR:
-                    accountManager.purchaseRubEur(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseRubEur(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case PURCHASE_EUR_RUB:
-                    accountManager.purchaseEurRub(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseEurRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case PURCHASE_USD_EUR:
-                    accountManager.purchaseUsdEur(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseUsdEur(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
                 case PURCHASE_EUR_USD:
-                    accountManager.purchaseEurUsd(account, amountCurrency(inputReaderDto.parameter[0]));
-                    break;
+                    accountManager.purchaseEurUsd(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    return true;
+                case PURCHASE_CURRENCY:
+                    accountManager.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter()[0]), inputReaderDto.getParameter()[1], inputReaderDto.getParameter()[2]);
+                    return true;
                 case LOGOUT:
                     account = accountManager.logOut(account);
-                    break;
+                    return true;
                 case LOGIN:
-                    account = accountManager.logIn(accountLogin, inputReaderDto.parameter[0]);
-                    break;
+                    account = accountManager.logIn(accountLogin, inputReaderDto.getParameter()[0]);
+                    return true;
                 case EXIT:
-                    Main.flagExit = false;
-                    break;
+                    return false;
                 default:
                     System.out.println("Данная команда не поддерживается. Для ввывода списка команд введите help");
-                    break;
+                    return true;
             }
         }
+        return true;
     }
 
     public boolean compareCommand(CommandMenu command, CommandMenu[] listCommand) {
@@ -134,7 +137,7 @@ public class Menu {
     public void printListCommandForPermission (CommandMenu[] listCommand) {
         for (int i = 0; i < listCommand.length; i++) {
             if (listCommand[i] != CommandMenu.DEFAULT) {
-                System.out.println(listCommand[i].getValue());
+                System.out.println(listCommand[i].getDescription());
             }
         }
     }

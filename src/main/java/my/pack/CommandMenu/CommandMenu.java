@@ -2,27 +2,38 @@ package my.pack.CommandMenu;
 
 public enum CommandMenu {
 
-    HELP("help - Вызвать список доступных команд"),
-    LOGIN("login <логин> - Вход в систему под пользователем с логином <логин>"),
-    LOGOUT("logout - Выйти из системы"),
-    CREATE_ACCOUNT("createAccount <логин> <роль> - Создание счета для нового пользователя <логин> с правами <ролью>"),
-    ACCOUNT_STATUS_CURRENCY("accountStatusCurrency <валюта> - Проверить состояния <валюта> части счета (ALL для проверки общего счета)"),
-    DEPOSIT_RUB("depositRub <сумма> - <Сумма> положить на счет рубли"),
-    EXCHANGE_RATE("exchangeRate - Узнать курс валют"),
-    PURCHASE_USD_RUB("purchaseUsdRub <сумма> - <Сумма> купить USD за RUB"),
-    PURCHASE_RUB_USD("purchaseRubUsd <сумма> - <Сумма> купить RUB за USD"),
-    PURCHASE_EUR_RUB("purchaseEurRub <сумма> - <Сумма> купить EUR за RUB"),
-    PURCHASE_RUB_EUR("purchaseRubEur <сумма> - <Сумма> купить RUB за EUR"),
-    PURCHASE_EUR_USD("purchaseEurUsd <сумма> - <Сумма> купить EUR за USD"),
-    PURCHASE_USD_EUR("purchaseUsdEur <сумма> - <Сумма> купить USD за EUR"),
-    EXIT("exit - Выйти из программы"),
-    DEFAULT("Данная команда не поддерживается");
+    HELP("help - Вызвать список доступных команд", "help"),
+    LOGIN("login <логин> - Вход в систему под пользователем с логином <логин>", "login"),
+    LOGOUT("logout - Выйти из системы", "logout"),
+    CREATE_ACCOUNT("createAccount <логин> <роль> - Создание счета для нового пользователя <логин> с правами <ролью>", "createAccount"),
+    ACCOUNT_STATUS_CURRENCY("accountStatusCurrency <валюта> - Проверить состояния <валюта> части счета (ALL для проверки общего счета)", "accountStatusCurrency"),
+    DEPOSIT_RUB("depositRub <сумма> - <Сумма> положить на счет рубли", "depositRub"),
+    EXCHANGE_RATE("exchangeRate - Узнать курс валют", "exchangeRate"),
+    PURCHASE_USD_RUB("purchaseUsdRub <сумма> - <Сумма> купить USD за RUB", "purchaseUsdRub"),
+    PURCHASE_RUB_USD("purchaseRubUsd <сумма> - <Сумма> купить RUB за USD", "purchaseRubUsd"),
+    PURCHASE_EUR_RUB("purchaseEurRub <сумма> - <Сумма> купить EUR за RUB", "purchaseEurRub"),
+    PURCHASE_RUB_EUR("purchaseRubEur <сумма> - <Сумма> купить RUB за EUR", "purchaseRubEur"),
+    PURCHASE_EUR_USD("purchaseEurUsd <сумма> - <Сумма> купить EUR за USD", "purchaseEurUsd"),
+    PURCHASE_USD_EUR("purchaseUsdEur <сумма> - <Сумма> купить USD за EUR", "purchaseUsdEur"),
+    PURCHASE_CURRENCY("purchaseCurrency <сумма> <1 валюта> <2 валюта> - Купить <1 валюта> на <сумма> <2 валюта>", "purchaseCurrency"),
+    EXIT("exit - Выйти из программы", "exit"),
+    DEFAULT("Данная команда не поддерживается", "default");
 
-    private String value;
+    private String description;
+    private String command;
 
     CommandMenu(String value) {
-        this.value = value;
+        this.description = value;
     }
+
+    CommandMenu(String value, String command) {
+        this.description = value;
+        this.command = command;
+    }
+
+/*    public CommandMenu findCommandByName(){
+        return ;
+    }*/
 
     public static CommandMenu getMenu(String command) {
         switch (command) {
@@ -52,6 +63,8 @@ public enum CommandMenu {
                 return CommandMenu.PURCHASE_EUR_USD;
             case "purchaseUsdEur":
                 return CommandMenu.PURCHASE_USD_EUR;
+            case "purchaseCurrency":
+                return CommandMenu.PURCHASE_CURRENCY;
             case "exit":
                 return CommandMenu.EXIT;
             default:
@@ -59,8 +72,8 @@ public enum CommandMenu {
         }
     }
 
-    public String getValue() {
-        return value;
+    public String getDescription() {
+        return description;
     }
 
 }

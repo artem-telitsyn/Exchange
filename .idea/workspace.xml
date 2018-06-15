@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3fd115c-74bd-492e-8e51-4f21e760d9b8" name="Default" comment="Рефакторинг&#10;&#10;Поправил пару опечаток">
-      <change afterPath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuNoRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" afterDir="false" />
+    <list default="true" id="b3fd115c-74bd-492e-8e51-4f21e760d9b8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Account/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Account/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Account/AccountManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Account/AccountManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/CommandMenu/CommandMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/CommandMenu/CommandMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/DepositCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/DepositCurrency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/ExchangeCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/ExchangeCurrency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Menu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Menu.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,30 +32,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DepositCurrency.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AccountManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListCommandForPermission.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Permission.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="-680">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#purchaseUsdRub#0;class#AccountManager#0" />
+                <element signature="method#purchaseRubUsd#0;class#AccountManager#0" />
+                <element signature="method#purchaseEurRub#0;class#AccountManager#0" />
+                <element signature="method#purchaseRubEur#0;class#AccountManager#0" />
+                <element signature="method#purchaseEurUsd#0;class#AccountManager#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,41 +53,39 @@
       <file leaf-file-name="CommandMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="527">
+              <caret line="33" column="2" selection-start-line="33" selection-end-line="35" selection-end-column="7" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2952#2953#0" expanded="true" />
+                <element signature="e#2980#2981#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExchangeCurrency.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="238">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#854#855#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1089#1090#0" expanded="true" />
+                <element signature="e#1119#1120#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReader.java">
+      <file leaf-file-name="Permission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -97,8 +93,39 @@
       <file leaf-file-name="InputReaderDto.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListCommandForPermission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="118" selection-start-line="14" selection-start-column="118" selection-end-line="14" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Menu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1027">
+              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1528979621401" expanded="true" signature="1361:1691" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +133,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="510">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,14 +142,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Menu.java">
+      <file leaf-file-name="InputReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+            <state relative-caret-position="289">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1528384048456" expanded="true" signature="1332:1662" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -145,24 +171,24 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/my/pack/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/AccountManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenuNoRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommamdMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuNoRole.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCoomandForPermission.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java" />
       </list>
     </option>
   </component>
@@ -187,6 +213,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,12 +269,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="Per&#9;FILE&#9;file://C:/Users/a.telitsyn/IdeaProjects/exchange/src/main/java/my/pack/CommandMenu/Permission.java&#10;CommMe&#9;FILE&#9;file://C:/Users/a.telitsyn/IdeaProjects/exchange/src/main/java/my/pack/CommandMenu/CommandMenu.java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -361,7 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527868101539</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Рефакторинг&#10;&#10;Поправил пару опечаток">
+      <created>1528386517263</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528386517263</updated>
+    </task>
+    <task id="LOCAL-00003" summary="BigDecimal&#10;&#10;Перешел с double на BigDecimal">
+      <created>1528460571541</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1528460571541</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -379,30 +420,30 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993513" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4968017" weight="0.3271548" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4968017" weight="0.32698095" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021322" side_tool="true" weight="0.35707122" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.27983952" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32998997" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" visible="true" weight="0.27983952" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.32998997" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26226014" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32998997" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27025586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39759037" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719158" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32998997" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
@@ -439,11 +480,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Перешел на Maven" />
     <MESSAGE value="Рефакторинг&#10;&#10;Ввел роли админ и клиент&#10;Перешел на enum для ролей и команд" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг&#10;&#10;Ввел роли админ и клиент&#10;Перешел на enum для ролей и команд" />
+    <MESSAGE value="Рефакторинг&#10;&#10;Поправил пару опечаток" />
+    <MESSAGE value="BigDecimal&#10;&#10;Перешел с double на BigDecimal" />
+    <option name="LAST_COMMIT_MESSAGE" value="BigDecimal&#10;&#10;Перешел с double на BigDecimal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="144" />
+      <option name="time" value="168" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -460,6 +503,190 @@
     <select />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1089#1090#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1528979621401" expanded="true" signature="1361:1691" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2822">
+          <caret line="173" column="12" lean-forward="true" selection-start-line="173" selection-start-column="12" selection-end-line="173" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#purchaseUsdRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubUsd#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubEur#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurUsd#0;class#AccountManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#purchaseUsdRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubUsd#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubEur#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurUsd#0;class#AccountManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1528979621401" expanded="true" signature="1361:1691" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/test/src/Account.java" />
     <entry file="file://$PROJECT_DIR$/test/src/AccountManager.java" />
@@ -489,104 +716,50 @@
     <entry file="file://$PROJECT_DIR$/test/src/ExchangeCurrency.java" />
     <entry file="file://$PROJECT_DIR$/test/src/Menu.java" />
     <entry file="file://$PROJECT_DIR$/test/src/InputReader.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuNoRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuAdmin.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuClient.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenuNoRole.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="170">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="459">
+          <caret line="34" selection-start-line="28" selection-start-column="27" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="510">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -595,18 +768,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/ListCommandForPermission.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state relative-caret-position="238">
+          <caret line="14" column="118" selection-start-line="14" selection-start-column="118" selection-end-line="14" selection-end-column="118" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+        <state relative-caret-position="-1027">
+          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1528384048456" expanded="true" signature="1332:1662" ph="{...}" />
+            <marker date="1528979621401" expanded="true" signature="1361:1691" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1089#1090#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="33" column="2" selection-start-line="33" selection-end-line="35" selection-end-column="7" />
+          <folding>
+            <element signature="e#2952#2953#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#purchaseUsdRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubUsd#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurRub#0;class#AccountManager#0" />
+            <element signature="method#purchaseRubEur#0;class#AccountManager#0" />
+            <element signature="method#purchaseEurUsd#0;class#AccountManager#0" />
           </folding>
         </state>
       </provider>
