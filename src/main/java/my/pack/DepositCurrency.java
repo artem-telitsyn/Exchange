@@ -3,7 +3,8 @@ package my.pack;
 import my.pack.Account.Account;
 
 import java.math.BigDecimal;
-
+// Кажется, что данный класс лучше подходит для переводов, чем accountManager. AccoutManager Отвечает за создание, логин, логаут. 
+// А финансовые операции логично делать в одном месте. Пополнение, плюс переводы со счета на счет
 public class DepositCurrency {
     public void depositRub(Account account, BigDecimal amount) {
         if (account != null) {
