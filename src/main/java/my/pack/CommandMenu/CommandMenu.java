@@ -9,31 +9,32 @@ public enum CommandMenu {
     ACCOUNT_STATUS_CURRENCY("accountStatusCurrency <валюта> - Проверить состояния <валюта> части счета (ALL для проверки общего счета)", "accountStatusCurrency"),
     DEPOSIT_RUB("depositRub <сумма> - <Сумма> положить на счет рубли", "depositRub"),
     EXCHANGE_RATE("exchangeRate - Узнать курс валют", "exchangeRate"),
-    PURCHASE_USD_RUB("purchaseUsdRub <сумма> - <Сумма> купить USD за RUB", "purchaseUsdRub"),
-    PURCHASE_RUB_USD("purchaseRubUsd <сумма> - <Сумма> купить RUB за USD", "purchaseRubUsd"),
-    PURCHASE_EUR_RUB("purchaseEurRub <сумма> - <Сумма> купить EUR за RUB", "purchaseEurRub"),
-    PURCHASE_RUB_EUR("purchaseRubEur <сумма> - <Сумма> купить RUB за EUR", "purchaseRubEur"),
-    PURCHASE_EUR_USD("purchaseEurUsd <сумма> - <Сумма> купить EUR за USD", "purchaseEurUsd"),
-    PURCHASE_USD_EUR("purchaseUsdEur <сумма> - <Сумма> купить USD за EUR", "purchaseUsdEur"),
-    PURCHASE_CURRENCY("purchaseCurrency <сумма> <1 валюта> <2 валюта> - Купить <1 валюта> на <сумма> <2 валюта>", "purchaseCurrency"),
+    CHANGE_RATE("changeRate <валюта> <новый курс к рублю> - Изменить курс валюты", "changeRate"),
+    PURCHASE_CURRENCY("purchaseCurrency <сумма> <1 валюта> <2 валюта> - Обменять <сумма> <1 валюта> на <2 валюта>", "purchaseCurrency"),
     EXIT("exit - Выйти из программы", "exit"),
     DEFAULT("Данная команда не поддерживается", "default");
 
     private String description;
     private String command;
 
-    CommandMenu(String value) {
-        this.description = value;
-    }
-
     CommandMenu(String value, String command) {
         this.description = value;
         this.command = command;
     }
 
-/*    public CommandMenu findCommandByName(){
-        return ;
-    }*/
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public CommandMenu findCommandByName(String command1){
+        CommandMenu c = CommandMenu.valueOf(command1);
+        CommandMenu d = CommandMenu.valueOf(command1);
+        return CommandMenu.valueOf(command1);
+    }
 
     public static CommandMenu getMenu(String command) {
         switch (command) {
@@ -51,18 +52,8 @@ public enum CommandMenu {
                 return CommandMenu.ACCOUNT_STATUS_CURRENCY;
             case "exchangeRate":
                 return CommandMenu.EXCHANGE_RATE;
-            case "purchaseUsdRub":
-                return CommandMenu.PURCHASE_USD_RUB;
-            case "purchaseRubUsd":
-                return CommandMenu.PURCHASE_RUB_USD;
-            case "purchaseEurRub":
-                return CommandMenu.PURCHASE_EUR_RUB;
-            case "purchaseRubEur":
-                return CommandMenu.PURCHASE_RUB_EUR;
-            case "purchaseEurUsd":
-                return CommandMenu.PURCHASE_EUR_USD;
-            case "purchaseUsdEur":
-                return CommandMenu.PURCHASE_USD_EUR;
+            case "changeRate":
+                return CommandMenu.CHANGE_RATE;
             case "purchaseCurrency":
                 return CommandMenu.PURCHASE_CURRENCY;
             case "exit":
@@ -71,10 +62,5 @@ public enum CommandMenu {
                 return CommandMenu.DEFAULT;
         }
     }
-
-    public String getDescription() {
-        return description;
-    }
-
 }
 

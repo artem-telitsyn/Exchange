@@ -10,35 +10,37 @@ import java.util.*;
 public class Menu {
 
     private Account account;
-    public static Permission permission;
-    private ListCommandForPermission listCommandForPermission;
+    public static Permission accountPermission;
+    private CommandMenu commandMenu;
     private final HashMap accountLogin;
     private final AccountManager accountManager;
     private final DepositCurrency depositCurrency;
     private final ExchangeCurrency exchangeCurrency;
 
-    public Menu(Account account, AccountManager accountManager, DepositCurrency depositCurrency, ExchangeCurrency exchangeCurrency, HashMap accountLogin, ListCommandForPermission listCommandForPermission) {
+    public Menu(Account account, AccountManager accountManager, DepositCurrency depositCurrency,
+                ExchangeCurrency exchangeCurrency, HashMap accountLogin) {
         this.account = account;
         this.accountManager = accountManager;
         this.depositCurrency = depositCurrency;
         this.exchangeCurrency = exchangeCurrency;
         this.accountLogin = accountLogin;
-        this.listCommandForPermission = listCommandForPermission;
     }
 
     public void printHelp(Account account) {
-        CommandMenu[] listCommand;
         if (account == null) {
-            permission = Permission.UNAUTHORISED;
+            accountPermission = Permission.UNAUTHORISED;
         } else {
-            permission = account.getRole();
+            accountPermission = account.getRole();
         }
-        listCommand = listCommandForPermission.getListCommandForPermission(account);
-        switch (permission) {
+        List<CommandMenu> listCommand = accountPermission.getListCommandForPermission(account);
+        switch (accountPermission) {
             case CLIENT:
                 printListCommandForPermission(listCommand);
                 break;
             case ADMIN:
+                printListCommandForPermission(listCommand);
+                break;
+            case UNAUTHORISED:
                 printListCommandForPermission(listCommand);
                 break;
             default:
@@ -48,17 +50,17 @@ public class Menu {
     }
 
     public boolean checkPermission(Account account, CommandMenu command) {
-        CommandMenu[] listCommand = listCommandForPermission.getListCommandForPermission(account);
+        List<CommandMenu> listCommand = accountPermission.getListCommandForPermission(account);
         if (command == CommandMenu.DEFAULT) {
             System.out.println(command.getDescription());
             return false;
-        } else if (account != null && command != null && permission != null) {
+        } else if (account != null && command != null && accountPermission != null) {
             if (compareCommand(command, listCommand)) {
                 return true;
             }
             System.out.println("Недостаточно прав");
             return false;
-        } else if (account == null && command != null && (permission == Permission.UNAUTHORISED)) {
+        } else if (account == null && command != null && (accountPermission == Permission.UNAUTHORISED)) {
             if (compareCommand(command, listCommand)) {
                 return true;
             }
@@ -70,50 +72,59 @@ public class Menu {
     }
 
     public boolean selectItemFromMenu(InputReaderDto inputReaderDto) {
-        CommandMenu command = CommandMenu.getMenu(inputReaderDto.getCommand());
+        CommandMenu command = commandMenu.findCommandByName(inputReaderDto.getCommand());
         if (checkPermission(account, command)) {
             switch (command) {
                 case HELP:
                     printHelp(account);
                     return true;
                 case CREATE_ACCOUNT:
-                    accountManager.createAccount(accountLogin, inputReaderDto.getParameter()[0], inputReaderDto.getParameter()[1], permission);
+                    if (inputReaderDto.getParameter().size() >= 3) {
+                        accountManager.createAccount(accountLogin, inputReaderDto.getParameter().get(1), inputReaderDto.getParameter().get(2), accountPermission);
+                    } else {
+                        System.out.println("Не указан одни из параметров");
+                    }
                     return true;
                 case ACCOUNT_STATUS_CURRENCY:
-                    accountManager.getCurrentAccountCurrencyStatus(account, inputReaderDto.getParameter()[0]);
+                    if (inputReaderDto.getParameter().size() >= 2) {
+                        accountManager.getCurrentAccountCurrencyStatus(account, inputReaderDto.getParameter().get(1));
+                    } else {
+                        System.out.println("Не указан параметр");
+                    }
                     return true;
                 case DEPOSIT_RUB:
-                    depositCurrency.depositRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                    if (inputReaderDto.getParameter().size() >= 2) {
+                        depositCurrency.depositRub(account, amountCurrency(inputReaderDto.getParameter().get(1)));
+                    } else {
+                        System.out.println("Не указан параметр");
+                    }
                     return true;
                 case EXCHANGE_RATE:
                     exchangeCurrency.getExchangeRate();
                     return true;
-                case PURCHASE_RUB_USD:
-                    accountManager.purchaseRubUsd(account, amountCurrency(inputReaderDto.getParameter()[0]));
-                    return true;
-                case PURCHASE_USD_RUB:
-                    accountManager.purchaseUsdRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
-                    return true;
-                case PURCHASE_RUB_EUR:
-                    accountManager.purchaseRubEur(account, amountCurrency(inputReaderDto.getParameter()[0]));
-                    return true;
-                case PURCHASE_EUR_RUB:
-                    accountManager.purchaseEurRub(account, amountCurrency(inputReaderDto.getParameter()[0]));
-                    return true;
-                case PURCHASE_USD_EUR:
-                    accountManager.purchaseUsdEur(account, amountCurrency(inputReaderDto.getParameter()[0]));
-                    return true;
-                case PURCHASE_EUR_USD:
-                    accountManager.purchaseEurUsd(account, amountCurrency(inputReaderDto.getParameter()[0]));
+                case CHANGE_RATE:
+                    if (inputReaderDto.getParameter().size() >= 3) {
+                        exchangeCurrency.setCurrencyRate(inputReaderDto.getParameter().get(1), amountCurrency(inputReaderDto.getParameter().get(2)));
+                    } else {
+                        System.out.println("Не указан одни из параметров");
+                    }
                     return true;
                 case PURCHASE_CURRENCY:
-                    accountManager.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter()[0]), inputReaderDto.getParameter()[1], inputReaderDto.getParameter()[2]);
+                    if (inputReaderDto.getParameter().size() >= 4) {
+                        depositCurrency.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter().get(1)), inputReaderDto.getParameter().get(2), inputReaderDto.getParameter().get(3));
+                    } else {
+                        System.out.println("Не указан одни из параметров");
+                    }
                     return true;
                 case LOGOUT:
                     account = accountManager.logOut(account);
                     return true;
                 case LOGIN:
-                    account = accountManager.logIn(accountLogin, inputReaderDto.getParameter()[0]);
+                    if (inputReaderDto.getParameter().size() >= 2) {
+                        account = accountManager.logIn(accountLogin, inputReaderDto.getParameter().get(1));
+                    } else {
+                        System.out.println("Не указан параметр");
+                    }
                     return true;
                 case EXIT:
                     return false;
@@ -125,19 +136,19 @@ public class Menu {
         return true;
     }
 
-    public boolean compareCommand(CommandMenu command, CommandMenu[] listCommand) {
-        for (int i = 0; i < listCommand.length; i++) {
-            if (command == listCommand[i]) {
+    public boolean compareCommand(CommandMenu command, List<CommandMenu> listCommand) {
+        for (int i = 0; i < listCommand.size(); i++) {
+            if (command == listCommand.get(i)) {
                 return true;
             }
         }
         return false;
     }
 
-    public void printListCommandForPermission (CommandMenu[] listCommand) {
-        for (int i = 0; i < listCommand.length; i++) {
-            if (listCommand[i] != CommandMenu.DEFAULT) {
-                System.out.println(listCommand[i].getDescription());
+    public void printListCommandForPermission(List<CommandMenu> listCommand) {
+        for (int i = 0; i < listCommand.size(); i++) {
+            if (listCommand.get(i) != CommandMenu.DEFAULT) {
+                System.out.println(listCommand.get(i).getDescription());
             }
         }
     }
