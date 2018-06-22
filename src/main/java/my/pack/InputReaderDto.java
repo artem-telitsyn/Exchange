@@ -1,8 +1,10 @@
 package my.pack;
 
+import java.util.List;
+
 public class InputReaderDto {
     private String command;
-    private String[] parameter;
+    private List<String> parameter;
 
     public String getCommand() {
         return command;
@@ -12,11 +14,12 @@ public class InputReaderDto {
         this.command = command;
     }
 
-    public String[] getParameter() {
+    public List<String> getParameter() {
         return parameter;
     }
 
-    public void setParameter(String[] parameter) {
+    public void setParameter(List<String> parameter) {
         this.parameter = parameter;
+
     }
 }

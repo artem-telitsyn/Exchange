@@ -2,7 +2,6 @@ package my.pack;
 
 import my.pack.Account.Account;
 import my.pack.Account.AccountManager;
-import my.pack.CommandMenu.ListCommandForPermission;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,10 +14,11 @@ public class Main {
 
         Boolean flagExit = true;
         HashMap accountByLogin = new HashMap<String, Account>();
-        ExchangeCurrency exchangeCurrency = new ExchangeCurrency( new HashMap<String, BigDecimal>());
+        ExchangeCurrency exchangeCurrency = new ExchangeCurrency(new HashMap<String, BigDecimal>());
+        AccountManager accountManager = new AccountManager();
         Account account = null;
-        Menu menu = new Menu(account, new AccountManager(exchangeCurrency), new DepositCurrency(),
-                exchangeCurrency, accountByLogin, new ListCommandForPermission());
+        Menu menu = new Menu(account, accountManager, new DepositCurrency(exchangeCurrency, accountManager),
+                exchangeCurrency, accountByLogin);
         InputReader inputReader = new InputReader();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
