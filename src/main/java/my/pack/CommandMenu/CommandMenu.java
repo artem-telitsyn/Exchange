@@ -36,6 +36,7 @@ public enum CommandMenu {
         return CommandMenu.valueOf(command1);
     }
 
+    // Если добавить название команды к enum'у, то такого большого switch'a удастся сбежать, сделав один метод findCommandByName
     public static CommandMenu getMenu(String command) {
         switch (command) {
             case "help":
