@@ -1,6 +1,6 @@
-package my.pack.CommandMenu;
+package my.pack.MenuCommand;
 
-public enum CommandMenu {
+public enum MenuCommand {
 
     HELP("help - Вызвать список доступных команд", "help"),
     LOGIN("login <логин> - Вход в систему под пользователем с логином <логин>", "login"),
@@ -17,7 +17,7 @@ public enum CommandMenu {
     private String description;
     private String command;
 
-    CommandMenu(String value, String command) {
+    MenuCommand(String value, String command) {
         this.description = value;
         this.command = command;
     }
@@ -30,36 +30,36 @@ public enum CommandMenu {
         return command;
     }
 
-    public CommandMenu findCommandByName(String command1){
-        CommandMenu c = CommandMenu.valueOf(command1);
-        CommandMenu d = CommandMenu.valueOf(command1);
-        return CommandMenu.valueOf(command1);
+    public MenuCommand findCommandByName(String command1){
+        MenuCommand c = MenuCommand.valueOf(command1);
+        MenuCommand d = MenuCommand.valueOf(command1);
+        return MenuCommand.valueOf(command1);
     }
 
-    public static CommandMenu getMenu(String command) {
+    public static MenuCommand getMenu(String command) {
         switch (command) {
             case "help":
-                return CommandMenu.HELP;
+                return MenuCommand.HELP;
             case "login":
-                return CommandMenu.LOGIN;
+                return MenuCommand.LOGIN;
             case "logout":
-                return CommandMenu.LOGOUT;
+                return MenuCommand.LOGOUT;
             case "createAccount":
-                return CommandMenu.CREATE_ACCOUNT;
+                return MenuCommand.CREATE_ACCOUNT;
             case "depositRub":
-                return CommandMenu.DEPOSIT_RUB;
+                return MenuCommand.DEPOSIT_RUB;
             case "accountStatusCurrency":
-                return CommandMenu.ACCOUNT_STATUS_CURRENCY;
+                return MenuCommand.ACCOUNT_STATUS_CURRENCY;
             case "exchangeRate":
-                return CommandMenu.EXCHANGE_RATE;
+                return MenuCommand.EXCHANGE_RATE;
             case "changeRate":
-                return CommandMenu.CHANGE_RATE;
+                return MenuCommand.CHANGE_RATE;
             case "purchaseCurrency":
-                return CommandMenu.PURCHASE_CURRENCY;
+                return MenuCommand.PURCHASE_CURRENCY;
             case "exit":
-                return CommandMenu.EXIT;
+                return MenuCommand.EXIT;
             default:
-                return CommandMenu.DEFAULT;
+                return MenuCommand.DEFAULT;
         }
     }
 }

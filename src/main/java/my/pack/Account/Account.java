@@ -1,8 +1,9 @@
 package my.pack.Account;
 
-import my.pack.CommandMenu.Permission;
+import my.pack.MenuCommand.Permission;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Account {
@@ -10,6 +11,7 @@ public class Account {
     private String login;
     private Permission role;
     private HashMap<String, BigDecimal> accountCurrency;
+    private HashMap<Date, BigDecimal> transactionHistory;
 
     Account(HashMap accountCurrency) {
         this.accountCurrency = accountCurrency;
@@ -40,6 +42,14 @@ public class Account {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public HashMap<Date, BigDecimal> getTransactionHistory() {
+        return transactionHistory;
+    }
+
+    public void setTransactionHistory(HashMap<Date, BigDecimal> transactionHistory) {
+        this.transactionHistory = transactionHistory;
     }
 }
 

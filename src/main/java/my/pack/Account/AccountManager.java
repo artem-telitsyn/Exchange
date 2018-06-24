@@ -1,6 +1,6 @@
 package my.pack.Account;
 
-import my.pack.CommandMenu.Permission;
+import my.pack.MenuCommand.Permission;
 import my.pack.Menu;
 
 import java.math.BigDecimal;

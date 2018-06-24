@@ -2,7 +2,7 @@ package my.pack;
 
 import my.pack.Account.AccountManager;
 import my.pack.Account.Account;
-import my.pack.CommandMenu.*;
+import my.pack.MenuCommand.*;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -11,7 +11,7 @@ public class Menu {
 
     private Account account;
     public static Permission accountPermission;
-    private CommandMenu commandMenu;
+    private MenuCommand menuCommand;
     private final HashMap accountLogin;
     private final AccountManager accountManager;
     private final DepositCurrency depositCurrency;
@@ -26,13 +26,13 @@ public class Menu {
         this.accountLogin = accountLogin;
     }
 
-    public void printHelp(Account account) {
+    public void help(Account account) {
         if (account == null) {
             accountPermission = Permission.UNAUTHORISED;
         } else {
             accountPermission = account.getRole();
         }
-        List<CommandMenu> listCommand = accountPermission.getListCommandForPermission(account);
+        List<MenuCommand> listCommand = accountPermission.getListCommandForPermission(account);
         switch (accountPermission) {
             case CLIENT:
                 printListCommandForPermission(listCommand);
@@ -49,9 +49,9 @@ public class Menu {
         }
     }
 
-    public boolean checkPermission(Account account, CommandMenu command) {
-        List<CommandMenu> listCommand = accountPermission.getListCommandForPermission(account);
-        if (command == CommandMenu.DEFAULT) {
+    public boolean checkPermission(Account account, MenuCommand command) {
+        List<MenuCommand> listCommand = accountPermission.getListCommandForPermission(account);
+        if (command == MenuCommand.DEFAULT) {
             System.out.println(command.getDescription());
             return false;
         } else if (account != null && command != null && accountPermission != null) {
@@ -72,15 +72,16 @@ public class Menu {
     }
 
     public boolean selectItemFromMenu(InputReaderDto inputReaderDto) {
-        CommandMenu command = commandMenu.findCommandByName(inputReaderDto.getCommand());
+        MenuCommand command = MenuCommand.getMenu(inputReaderDto.getCommand());
         if (checkPermission(account, command)) {
             switch (command) {
                 case HELP:
-                    printHelp(account);
+                    help(account);
                     return true;
                 case CREATE_ACCOUNT:
                     if (inputReaderDto.getParameter().size() >= 3) {
-                        accountManager.createAccount(accountLogin, inputReaderDto.getParameter().get(1), inputReaderDto.getParameter().get(2), accountPermission);
+                        accountManager.createAccount(accountLogin, inputReaderDto.getParameter().get(1),
+                                inputReaderDto.getParameter().get(2), accountPermission);
                     } else {
                         System.out.println("Не указан одни из параметров");
                     }
@@ -104,14 +105,16 @@ public class Menu {
                     return true;
                 case CHANGE_RATE:
                     if (inputReaderDto.getParameter().size() >= 3) {
-                        exchangeCurrency.setCurrencyRate(inputReaderDto.getParameter().get(1), amountCurrency(inputReaderDto.getParameter().get(2)));
+                        exchangeCurrency.setCurrencyRate(inputReaderDto.getParameter().get(1),
+                                amountCurrency(inputReaderDto.getParameter().get(2)));
                     } else {
                         System.out.println("Не указан одни из параметров");
                     }
                     return true;
                 case PURCHASE_CURRENCY:
                     if (inputReaderDto.getParameter().size() >= 4) {
-                        depositCurrency.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter().get(1)), inputReaderDto.getParameter().get(2), inputReaderDto.getParameter().get(3));
+                        depositCurrency.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter().get(1)),
+                                inputReaderDto.getParameter().get(2), inputReaderDto.getParameter().get(3));
                     } else {
                         System.out.println("Не указан одни из параметров");
                     }
@@ -136,18 +139,17 @@ public class Menu {
         return true;
     }
 
-    public boolean compareCommand(CommandMenu command, List<CommandMenu> listCommand) {
-        for (int i = 0; i < listCommand.size(); i++) {
-            if (command == listCommand.get(i)) {
-                return true;
-            }
+    public boolean compareCommand(MenuCommand command, List<MenuCommand> listCommand) {
+        if (listCommand.contains(command)) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    public void printListCommandForPermission(List<CommandMenu> listCommand) {
+    public void printListCommandForPermission(List<MenuCommand> listCommand) {
         for (int i = 0; i < listCommand.size(); i++) {
-            if (listCommand.get(i) != CommandMenu.DEFAULT) {
+            if (listCommand.get(i) != MenuCommand.DEFAULT) {
                 System.out.println(listCommand.get(i).getDescription());
             }
         }

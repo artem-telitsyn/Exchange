@@ -1,4 +1,4 @@
-package my.pack.CommandMenu;
+package my.pack.MenuCommand;
 
 import my.pack.Account.Account;
 
@@ -12,10 +12,15 @@ public enum Permission {
 
     private String description;
 
-    private static List<CommandMenu> listAdminCommand = Arrays.asList(CommandMenu.HELP, CommandMenu.LOGOUT, CommandMenu.CREATE_ACCOUNT, CommandMenu.CHANGE_RATE, CommandMenu.DEFAULT, CommandMenu.EXIT);
-    private static List<CommandMenu> listClientCommand = Arrays.asList(CommandMenu.HELP, CommandMenu.LOGOUT, CommandMenu.ACCOUNT_STATUS_CURRENCY, CommandMenu.DEPOSIT_RUB, CommandMenu.EXCHANGE_RATE, CommandMenu.PURCHASE_CURRENCY, CommandMenu.EXIT, CommandMenu.DEFAULT);
-    private static List<CommandMenu> listBaseCommand = Arrays.asList(CommandMenu.HELP, CommandMenu.LOGOUT, CommandMenu.EXIT, CommandMenu.DEFAULT);
-    private static List<CommandMenu> listUnauthorisedCommand = Arrays.asList(CommandMenu.HELP, CommandMenu.CREATE_ACCOUNT, CommandMenu.LOGIN, CommandMenu.EXIT, CommandMenu.DEFAULT);
+    private static List<MenuCommand> listAdminCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
+            MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.DEFAULT, MenuCommand.EXIT);
+    private static List<MenuCommand> listClientCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
+            MenuCommand.ACCOUNT_STATUS_CURRENCY, MenuCommand.DEPOSIT_RUB, MenuCommand.EXCHANGE_RATE,
+            MenuCommand.PURCHASE_CURRENCY, MenuCommand.EXIT, MenuCommand.DEFAULT);
+    private static List<MenuCommand> listBaseCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
+            MenuCommand.EXIT, MenuCommand.DEFAULT);
+    private static List<MenuCommand> listUnauthorisedCommand = Arrays.asList(MenuCommand.HELP,
+            MenuCommand.CREATE_ACCOUNT, MenuCommand.LOGIN, MenuCommand.EXIT, MenuCommand.DEFAULT);
 
     Permission(String value) {
         this.description = value;
@@ -36,7 +41,7 @@ public enum Permission {
         }
     }
 
-    public List<CommandMenu> getListCommandForPermission(Account account) {
+    public List<MenuCommand> getListCommandForPermission(Account account) {
         if (account != null) {
             switch (account.getRole()) {
                 case ADMIN:

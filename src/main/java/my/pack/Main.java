@@ -22,7 +22,7 @@ public class Main {
         InputReader inputReader = new InputReader();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        menu.printHelp(account);
+        menu.help(account);
         while (flagExit) {
             flagExit = menu.selectItemFromMenu(inputReader.read(reader));
         }

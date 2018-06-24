@@ -20,6 +20,7 @@ public class DepositCurrency {
             BigDecimal amountOnAccount;
             amountOnAccount = account.getAccountCurrency("RUB");
             account.setAccountCurrency("RUB", amountOnAccount.add(amount));
+            account.setTransactionHistory(,account.getAccountCurrency("RUB"));
             System.out.println("Успешное пополнение счета на " + amount + " RUB");
         } else {
             System.out.println("Необходимо создать счет");
