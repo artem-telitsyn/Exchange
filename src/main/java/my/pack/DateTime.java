@@ -5,9 +5,9 @@ import java.util.Date;
 
 public class DateTime {
 
-    public String currentDateTime () {
+    public String currentDateTime (long time) {
         SimpleDateFormat formate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
+        Date date = new Date(time);
         return formate.format(date);
     }
 }

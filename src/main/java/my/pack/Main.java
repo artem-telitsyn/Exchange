@@ -16,6 +16,7 @@ public class Main {
         HashMap accountByLogin = new HashMap<String, Account>();
         ExchangeCurrency exchangeCurrency = new ExchangeCurrency(new HashMap<String, BigDecimal>());
         AccountManager accountManager = new AccountManager();
+        DateTime dateTime = new DateTime();
         Account account = null;
         Menu menu = new Menu(account, accountManager, new DepositCurrency(exchangeCurrency, accountManager),
                 exchangeCurrency, accountByLogin);

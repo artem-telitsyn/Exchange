@@ -9,6 +9,7 @@ public class DepositCurrency {
 
     private ExchangeCurrency exchangeCurrency;
     private AccountManager accountManager;
+    private DateTime dateTime = new DateTime();
 
     public DepositCurrency(ExchangeCurrency exchangeCurrency, AccountManager accountManager) {
         this.exchangeCurrency = exchangeCurrency;
@@ -20,7 +21,11 @@ public class DepositCurrency {
             BigDecimal amountOnAccount;
             amountOnAccount = account.getAccountCurrency("RUB");
             account.setAccountCurrency("RUB", amountOnAccount.add(amount));
-            account.setTransactionHistory(,account.getAccountCurrency("RUB"));
+            account.getTransactionHistory().setData(System.currentTimeMillis());
+            account.getTransactionHistory().setCurrency("RUB");
+            account.getTransactionHistory().setRate(BigDecimal.valueOf(1));
+            account.getTransactionHistory().setAmount(amount);
+           // System.out.println(dateTime.currentDateTime(account.getTransactionHistory().getData()));
             System.out.println("Успешное пополнение счета на " + amount + " RUB");
         } else {
             System.out.println("Необходимо создать счет");
@@ -37,6 +42,7 @@ public class DepositCurrency {
                     } else if (firstCurrency.equals("RUB")) {
                         amount2 = amount.divide(exchangeCurrency.getCurrencyRate(secondCurrency), 2, 1);
                         account.setAccountCurrency(firstCurrency, account.getAccountCurrency(firstCurrency).subtract(amount));
+
                         account.setAccountCurrency(secondCurrency, account.getAccountCurrency(secondCurrency).add(amount2));
                         accountManager.getCurrentAccountCurrencyStatus(account, "ALL");
                     } else if (secondCurrency.equals("RUB")) {

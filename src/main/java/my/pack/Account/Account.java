@@ -11,20 +11,21 @@ public class Account {
     private String login;
     private Permission role;
     private HashMap<String, BigDecimal> accountCurrency;
-    private HashMap<Date, BigDecimal> transactionHistory;
+    private HashMap<Long, AccountHistory> transactionHistory;
 
-    Account(HashMap accountCurrency) {
+    Account(HashMap accountCurrency, HashMap<Long, AccountHistory> transactionHistory) {
         this.accountCurrency = accountCurrency;
         this.accountCurrency.put("RUB", BigDecimal.valueOf(0));
         this.accountCurrency.put("USD", BigDecimal.valueOf(0));
         this.accountCurrency.put("EUR", BigDecimal.valueOf(0));
+        this.transactionHistory = transactionHistory;
     }
 
-    public BigDecimal getAccountCurrency (String currency) {
+    public BigDecimal getAccountCurrency(String currency) {
         return accountCurrency.get(currency);
     }
 
-    public void setAccountCurrency (String currency, BigDecimal amount) {
+    public void setAccountCurrency(String currency, BigDecimal amount) {
         this.accountCurrency.put(currency, amount);
     }
 
@@ -44,12 +45,8 @@ public class Account {
         this.login = login;
     }
 
-    public HashMap<Date, BigDecimal> getTransactionHistory() {
+    public HashMap<Long, AccountHistory> getTransactionHistory() {
         return transactionHistory;
-    }
-
-    public void setTransactionHistory(HashMap<Date, BigDecimal> transactionHistory) {
-        this.transactionHistory = transactionHistory;
     }
 }
 
