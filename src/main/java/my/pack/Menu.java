@@ -2,6 +2,7 @@ package my.pack;
 
 import my.pack.Account.AccountManager;
 import my.pack.Account.Account;
+import my.pack.Account.History;
 import my.pack.MenuCommand.*;
 
 import java.math.BigDecimal;
@@ -14,16 +15,18 @@ public class Menu {
     private MenuCommand menuCommand;
     private final HashMap accountLogin;
     private final AccountManager accountManager;
+    private History history;
     private final DepositCurrency depositCurrency;
     private final ExchangeCurrency exchangeCurrency;
 
-    public Menu(Account account, AccountManager accountManager, DepositCurrency depositCurrency,
+    public Menu(Account account, AccountManager accountManager, History history, DepositCurrency depositCurrency,
                 ExchangeCurrency exchangeCurrency, HashMap accountLogin) {
         this.account = account;
         this.accountManager = accountManager;
         this.depositCurrency = depositCurrency;
         this.exchangeCurrency = exchangeCurrency;
         this.accountLogin = accountLogin;
+        this.history = history;
     }
 
     public void help(Account account) {
@@ -118,6 +121,9 @@ public class Menu {
                     } else {
                         System.out.println("Не указан одни из параметров");
                     }
+                    return true;
+                case TRANSACTION_HISTORY:
+                    history.getTransactionAccountOrderByDate(account);
                     return true;
                 case LOGOUT:
                     account = accountManager.logOut(account);

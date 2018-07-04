@@ -11,6 +11,7 @@ public enum MenuCommand {
     EXCHANGE_RATE("exchangeRate - Узнать курс валют", "exchangeRate"),
     CHANGE_RATE("changeRate <валюта> <новый курс к рублю> - Изменить курс валюты", "changeRate"),
     PURCHASE_CURRENCY("purchaseCurrency <сумма> <1 валюта> <2 валюта> - Обменять <сумма> <1 валюта> на <2 валюта>", "purchaseCurrency"),
+    TRANSACTION_HISTORY("transactionHistory - История всех транзакций отсортированные по дням", "transactionHistory"),
     EXIT("exit - Выйти из программы", "exit"),
     DEFAULT("Данная команда не поддерживается", "default");
 
@@ -56,6 +57,8 @@ public enum MenuCommand {
                 return MenuCommand.CHANGE_RATE;
             case "purchaseCurrency":
                 return MenuCommand.PURCHASE_CURRENCY;
+            case "transactionHistory":
+                return MenuCommand.TRANSACTION_HISTORY;
             case "exit":
                 return MenuCommand.EXIT;
             default:

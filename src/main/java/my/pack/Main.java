@@ -2,6 +2,7 @@ package my.pack;
 
 import my.pack.Account.Account;
 import my.pack.Account.AccountManager;
+import my.pack.Account.History;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,8 +18,9 @@ public class Main {
         ExchangeCurrency exchangeCurrency = new ExchangeCurrency(new HashMap<String, BigDecimal>());
         AccountManager accountManager = new AccountManager();
         DateTime dateTime = new DateTime();
+        History history = new History(dateTime);
         Account account = null;
-        Menu menu = new Menu(account, accountManager, new DepositCurrency(exchangeCurrency, accountManager),
+        Menu menu = new Menu(account, accountManager, history, new DepositCurrency(exchangeCurrency, accountManager),
                 exchangeCurrency, accountByLogin);
         InputReader inputReader = new InputReader();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

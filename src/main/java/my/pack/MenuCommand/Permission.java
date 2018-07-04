@@ -16,7 +16,7 @@ public enum Permission {
             MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.DEFAULT, MenuCommand.EXIT);
     private static List<MenuCommand> listClientCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.ACCOUNT_STATUS_CURRENCY, MenuCommand.DEPOSIT_RUB, MenuCommand.EXCHANGE_RATE,
-            MenuCommand.PURCHASE_CURRENCY, MenuCommand.EXIT, MenuCommand.DEFAULT);
+            MenuCommand.PURCHASE_CURRENCY, MenuCommand.TRANSACTION_HISTORY, MenuCommand.EXIT, MenuCommand.DEFAULT);
     private static List<MenuCommand> listBaseCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.EXIT, MenuCommand.DEFAULT);
     private static List<MenuCommand> listUnauthorisedCommand = Arrays.asList(MenuCommand.HELP,
