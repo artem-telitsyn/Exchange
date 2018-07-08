@@ -13,19 +13,19 @@ public class Menu {
     private Account account;
     public static Permission accountPermission;
     private MenuCommand menuCommand;
-    private final HashMap accountLogin;
+    private final HashMap accountByLogin;
     private final AccountManager accountManager;
     private History history;
     private final DepositCurrency depositCurrency;
     private final ExchangeCurrency exchangeCurrency;
 
     public Menu(Account account, AccountManager accountManager, History history, DepositCurrency depositCurrency,
-                ExchangeCurrency exchangeCurrency, HashMap accountLogin) {
+                ExchangeCurrency exchangeCurrency, HashMap accountByLogin) {
         this.account = account;
         this.accountManager = accountManager;
         this.depositCurrency = depositCurrency;
         this.exchangeCurrency = exchangeCurrency;
-        this.accountLogin = accountLogin;
+        this.accountByLogin = accountByLogin;
         this.history = history;
     }
 
@@ -83,7 +83,7 @@ public class Menu {
                     return true;
                 case CREATE_ACCOUNT:
                     if (inputReaderDto.getParameter().size() >= 3) {
-                        accountManager.createAccount(accountLogin, inputReaderDto.getParameter().get(1),
+                        accountManager.createAccount(accountByLogin, inputReaderDto.getParameter().get(1),
                                 inputReaderDto.getParameter().get(2), accountPermission);
                     } else {
                         System.out.println("Не указан одни из параметров");
@@ -125,12 +125,25 @@ public class Menu {
                 case TRANSACTION_HISTORY:
                     history.getTransactionAccountOrderByDate(account);
                     return true;
+                case TRANSACTION_HISTORY_ORDER_BY_AMOUNT:
+                    history.getTransactionAccountOrderByAmount(account);
+                    return true;
+                case MAX_THREE_TRANSACTION_OF_CLIENTS:
+                    history.getMaxThreeTransaction(accountByLogin);
+                    return true;
+                case TRANSACTION_HISTORY_BY_LOGIN:
+                    if (inputReaderDto.getParameter().size() >=2) {
+                        history.transactionHistoryByLogin(accountByLogin, inputReaderDto.getParameter().get(1));
+                    } else {
+                        System.out.println("Не указан параметр");
+                    }
+                    return true;
                 case LOGOUT:
                     account = accountManager.logOut(account);
                     return true;
                 case LOGIN:
                     if (inputReaderDto.getParameter().size() >= 2) {
-                        account = accountManager.logIn(accountLogin, inputReaderDto.getParameter().get(1));
+                        account = accountManager.logIn(accountByLogin, inputReaderDto.getParameter().get(1));
                     } else {
                         System.out.println("Не указан параметр");
                     }

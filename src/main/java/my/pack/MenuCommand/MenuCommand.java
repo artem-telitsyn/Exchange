@@ -12,6 +12,9 @@ public enum MenuCommand {
     CHANGE_RATE("changeRate <валюта> <новый курс к рублю> - Изменить курс валюты", "changeRate"),
     PURCHASE_CURRENCY("purchaseCurrency <сумма> <1 валюта> <2 валюта> - Обменять <сумма> <1 валюта> на <2 валюта>", "purchaseCurrency"),
     TRANSACTION_HISTORY("transactionHistory - История всех транзакций отсортированные по дням", "transactionHistory"),
+    TRANSACTION_HISTORY_ORDER_BY_AMOUNT("transactionHistoryOrderByAmount - История всех транзакций отсортированная по размеру транзакции", "transactionHistoryOrderByAmount"),
+    TRANSACTION_HISTORY_BY_LOGIN("transactionHistoryByLogin - История всех транзакций по клиенту", "transactionHistoryByLogin"),
+    MAX_THREE_TRANSACTION_OF_CLIENTS("maxThreeTransaction - Три самых больших транзакций по всех клиентам", "maxThreeTransaction"),
     EXIT("exit - Выйти из программы", "exit"),
     DEFAULT("Данная команда не поддерживается", "default");
 
@@ -31,7 +34,7 @@ public enum MenuCommand {
         return command;
     }
 
-    public MenuCommand findCommandByName(String command1){
+    public MenuCommand findCommandByName(String command1) {
         MenuCommand c = MenuCommand.valueOf(command1);
         MenuCommand d = MenuCommand.valueOf(command1);
         return MenuCommand.valueOf(command1);
@@ -59,6 +62,12 @@ public enum MenuCommand {
                 return MenuCommand.PURCHASE_CURRENCY;
             case "transactionHistory":
                 return MenuCommand.TRANSACTION_HISTORY;
+            case "transactionHistoryOrderByAmount":
+                return MenuCommand.TRANSACTION_HISTORY_ORDER_BY_AMOUNT;
+            case "transactionHistoryByLogin":
+                return MenuCommand.TRANSACTION_HISTORY_BY_LOGIN;
+            case "maxThreeTransaction":
+                return MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS;
             case "exit":
                 return MenuCommand.EXIT;
             default:

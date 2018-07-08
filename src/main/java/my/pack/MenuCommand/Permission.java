@@ -1,6 +1,7 @@
 package my.pack.MenuCommand;
 
 import my.pack.Account.Account;
+import my.pack.Menu;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,10 +14,10 @@ public enum Permission {
     private String description;
 
     private static List<MenuCommand> listAdminCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
-            MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.DEFAULT, MenuCommand.EXIT);
+            MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS, MenuCommand.TRANSACTION_HISTORY_BY_LOGIN, MenuCommand.DEFAULT, MenuCommand.EXIT);
     private static List<MenuCommand> listClientCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.ACCOUNT_STATUS_CURRENCY, MenuCommand.DEPOSIT_RUB, MenuCommand.EXCHANGE_RATE,
-            MenuCommand.PURCHASE_CURRENCY, MenuCommand.TRANSACTION_HISTORY, MenuCommand.EXIT, MenuCommand.DEFAULT);
+            MenuCommand.PURCHASE_CURRENCY, MenuCommand.TRANSACTION_HISTORY, MenuCommand.TRANSACTION_HISTORY_ORDER_BY_AMOUNT, MenuCommand.EXIT, MenuCommand.DEFAULT);
     private static List<MenuCommand> listBaseCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.EXIT, MenuCommand.DEFAULT);
     private static List<MenuCommand> listUnauthorisedCommand = Arrays.asList(MenuCommand.HELP,
