@@ -1,5 +1,6 @@
 package my.pack.Account;
 
+import my.pack.Currency;
 import my.pack.MenuCommand.Permission;
 import my.pack.Menu;
 
@@ -7,11 +8,13 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+import static my.pack.Currency.*;
+
 public class AccountManager {
 
     public void createAccount(HashMap<String, Account> accountByLogin, String login, String role, Permission permission) {
         if (login != null && role != null && (role.equals("admin") || role.equals("client"))) {
-            Account account = new Account(new HashMap<String, BigDecimal>(), new TreeMap<Long, AccountHistory>());
+            Account account = new Account(new HashMap<Currency, BigDecimal>(), new TreeMap<Long, AccountHistory>());
             accountByLogin.put(login, account);
             Permission per = permission.getPermission(role);
             account.setRole(per);
@@ -55,18 +58,18 @@ public class AccountManager {
         return account = null;
     }
 
-    public void getCurrentAccountCurrencyStatus(Account account, String currency) {
+    public void getCurrentAccountCurrencyStatus(Account account, Currency currency) {
         if (account != null) {
-            if (currency.equals("ALL")) {
-                System.out.println(account.getAccountCurrency("RUB") + " RUB");
-                System.out.println(account.getAccountCurrency("USD") + " USD");
-                System.out.println(account.getAccountCurrency("EUR") + " EUR");
-            } else if (currency.equals("RUB")) {
-                System.out.println(account.getAccountCurrency("RUB") + " RUB");
-            } else if (currency.equals("EUR")) {
-                System.out.println(account.getAccountCurrency("EUR") + " EUR");
-            } else if (currency.equals("USD")) {
-                System.out.println(account.getAccountCurrency("USD") + " USD");
+            if (currency.equals(ALL)) {
+                System.out.println(account.getAccountCurrency(RUB) + " " + RUB);
+                System.out.println(account.getAccountCurrency(USD) + " " + USD);
+                System.out.println(account.getAccountCurrency(EUR) + " " + EUR);
+            } else if (currency.equals(RUB)) {
+                System.out.println(account.getAccountCurrency(RUB) + " " + RUB);
+            } else if (currency.equals(EUR)) {
+                System.out.println(account.getAccountCurrency(EUR) + " " + EUR);
+            } else if (currency.equals(USD)) {
+                System.out.println(account.getAccountCurrency(USD) + " " + USD);
             } else if (currency.equals(null)) {
                 System.out.println("Укажите валюту");
             } else {

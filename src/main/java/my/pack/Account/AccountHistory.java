@@ -1,19 +1,21 @@
 package my.pack.Account;
 
+import my.pack.Currency;
+
 import java.math.BigDecimal;
 
 public class AccountHistory {
 
-    private String currency;
+    private Currency currency;
     private BigDecimal rate;
     private BigDecimal amount;
     private String note;
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 

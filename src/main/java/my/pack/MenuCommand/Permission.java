@@ -14,7 +14,7 @@ public enum Permission {
     private String permission;
 
     private static List<MenuCommand> listAdminCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
-            MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS, MenuCommand.TRANSACTION_HISTORY_BY_LOGIN, MenuCommand.DEFAULT, MenuCommand.EXIT);
+            MenuCommand.CREATE_ACCOUNT, MenuCommand.EXCHANGE_RATE, MenuCommand.CHANGE_RATE, MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS, MenuCommand.TRANSACTION_HISTORY_BY_LOGIN, MenuCommand.DEFAULT, MenuCommand.EXIT);
     private static List<MenuCommand> listClientCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.ACCOUNT_STATUS_CURRENCY, MenuCommand.DEPOSIT_RUB, MenuCommand.EXCHANGE_RATE,
             MenuCommand.PURCHASE_CURRENCY, MenuCommand.TRANSACTION_HISTORY, MenuCommand.TRANSACTION_HISTORY_ORDER_BY_AMOUNT, MenuCommand.EXIT, MenuCommand.DEFAULT);
@@ -36,7 +36,7 @@ public enum Permission {
         return permission;
     }
 
-    public Permission getPermission(String permis) {
+    public static Permission getPermission(String permis) {
         for (Permission perm : Permission.values()) {
             if (perm.permission.equals(permis)) {
                 return perm;
