@@ -5,13 +5,13 @@ import my.pack.Menu;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 public class AccountManager {
 
     public void createAccount(HashMap<String, Account> accountByLogin, String login, String role, Permission permission) {
-
         if (login != null && role != null && (role.equals("admin") || role.equals("client"))) {
-            Account account = new Account(new HashMap<String, BigDecimal>(), new AccountHistory());
+            Account account = new Account(new HashMap<String, BigDecimal>(), new TreeMap<Long, AccountHistory>());
             accountByLogin.put(login, account);
             Permission per = permission.getPermission(role);
             account.setRole(per);

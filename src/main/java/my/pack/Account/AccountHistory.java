@@ -7,6 +7,7 @@ public class AccountHistory {
     private String currency;
     private BigDecimal rate;
     private BigDecimal amount;
+    private String note;
 
     public String getCurrency() {
         return currency;
@@ -32,4 +33,11 @@ public class AccountHistory {
         this.amount = amount;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }
