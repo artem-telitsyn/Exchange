@@ -7,6 +7,12 @@
     <groupId>my.pack</groupId>
     <artifactId>exchange</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.0.7.RELEASE</version>
+        </dependency>
+    </dependencies>
 </project>

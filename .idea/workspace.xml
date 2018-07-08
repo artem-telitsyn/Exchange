@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3fd115c-74bd-492e-8e51-4f21e760d9b8" name="Default" comment="Рефакторинг&#10;&#10;Сделал новый метод по поиску команд, ушел от switch">
+    <list default="true" id="b3fd115c-74bd-492e-8e51-4f21e760d9b8" name="Default" comment="Рефакторинг&#10;&#10;Сделал новый метод по поиску команд и пермишенов, ушел от switch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Account/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Account/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/MenuCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/MenuCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Menu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/my/pack/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/my/pack/Menu.class" afterDir="false" />
     </list>
@@ -75,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Currency.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -105,11 +101,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountHistory.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AccountHistory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountHistory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" selection-start-line="8" selection-end-line="9" />
+            <state relative-caret-position="459">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -122,15 +127,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputReaderDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -151,6 +147,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="history" />
+      </map>
+    </option>
     <favorite-branches>
       <branch-storage>
         <map>
@@ -202,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/InputReaderDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java" />
-        <option value="$PROJECT_DIR$/src/main/java/my/pack/Currency.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/CommandMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/CommandMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/CommandMenu/Permission.java" />
@@ -217,6 +217,8 @@
         <option value="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/MenuCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/Account/AccountManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/my/pack/MenuCommand/Permission.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/my/pack/Currency.java" />
       </list>
     </option>
   </component>
@@ -305,7 +307,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -441,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531066135573</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Рефакторинг&#10;&#10;Сделал новый метод по поиску команд и пермишенов, ушел от switch">
+      <created>1531067899131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1531067899131</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -455,6 +464,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297062" />
@@ -548,7 +558,8 @@
     <MESSAGE value="BigDecimal&#10;&#10;Перешел с double на BigDecimal" />
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="История&#10;&#10;Написал команды&#10;Админ&#10;- для отображения истории транзакций по клиенту&#10;- для отображения топ 3 транзакции&#10;Клиент&#10;- для отображения истории транзакций отсортированные по дате&#10;- для отображения истории транзакций отсортированные по размеру транзакции" />
-    <option name="LAST_COMMIT_MESSAGE" value="История&#10;&#10;Написал команды&#10;Админ&#10;- для отображения истории транзакций по клиенту&#10;- для отображения топ 3 транзакции&#10;Клиент&#10;- для отображения истории транзакций отсортированные по дате&#10;- для отображения истории транзакций отсортированные по размеру транзакции" />
+    <MESSAGE value="Рефакторинг&#10;&#10;Сделал новый метод по поиску команд и пермишенов, ушел от switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг&#10;&#10;Сделал новый метод по поиску команд и пермишенов, ушел от switch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -680,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -792,16 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/DepositCurrency.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="863">
@@ -819,13 +813,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Currency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -858,8 +845,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Account/AccountHistory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" selection-start-line="8" selection-end-line="9" />
+        <state relative-caret-position="459">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/ExchangeCurrency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/my/pack/Currency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
