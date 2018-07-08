@@ -57,7 +57,6 @@ public class History {
         }
         if (size > 0) {
             TreeMap<String, ArrayList<Long>> maxTransactionByLogin = new TreeMap<String, ArrayList<Long>>();
-            HashMap<String, Long> maxThreeTransaction = new HashMap<String, Long>();
             for (String login : accountByLogin.keySet()) {
                 if (accountByLogin.get(login).getRole() == Permission.CLIENT) {
                     ArrayList<Long> listDate;

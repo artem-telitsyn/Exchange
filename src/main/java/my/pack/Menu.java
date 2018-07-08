@@ -75,7 +75,7 @@ public class Menu {
     }
 
     public boolean selectItemFromMenu(InputReaderDto inputReaderDto) {
-        MenuCommand command = MenuCommand.getMenu(inputReaderDto.getCommand());
+        MenuCommand command = MenuCommand.findCommandByName(inputReaderDto.getCommand());
         if (checkPermission(account, command)) {
             switch (command) {
                 case HELP:

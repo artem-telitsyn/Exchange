@@ -1,17 +1,17 @@
 package my.pack.MenuCommand;
 
 import my.pack.Account.Account;
-import my.pack.Menu;
 
 import java.util.Arrays;
 import java.util.List;
 
 public enum Permission {
-    UNAUTHORISED("Неавторизованный клиент или неверная роль"),
-    CLIENT("Клиент"),
-    ADMIN("Админ");
+    UNAUTHORISED("Неавторизованный клиент или неверная роль", "unauthorised"),
+    CLIENT("Клиент", "client"),
+    ADMIN("Админ", "admin");
 
     private String description;
+    private String permission;
 
     private static List<MenuCommand> listAdminCommand = Arrays.asList(MenuCommand.HELP, MenuCommand.LOGOUT,
             MenuCommand.CREATE_ACCOUNT, MenuCommand.CHANGE_RATE, MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS, MenuCommand.TRANSACTION_HISTORY_BY_LOGIN, MenuCommand.DEFAULT, MenuCommand.EXIT);
@@ -23,23 +23,26 @@ public enum Permission {
     private static List<MenuCommand> listUnauthorisedCommand = Arrays.asList(MenuCommand.HELP,
             MenuCommand.CREATE_ACCOUNT, MenuCommand.LOGIN, MenuCommand.EXIT, MenuCommand.DEFAULT);
 
-    Permission(String value) {
-        this.description = value;
+    Permission(String description, String permission) {
+        this.description = description;
+        this.permission = permission;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public Permission getPermission(String permission) {
-        switch (permission) {
-            case "client":
-                return Permission.CLIENT;
-            case "admin":
-                return Permission.ADMIN;
-            default:
-                return Permission.UNAUTHORISED;
+    public String getPermission() {
+        return permission;
+    }
+
+    public Permission getPermission(String permis) {
+        for (Permission perm : Permission.values()) {
+            if (perm.permission.equals(permis)) {
+                return perm;
+            }
         }
+        return Permission.UNAUTHORISED;
     }
 
     public List<MenuCommand> getListCommandForPermission(Account account) {

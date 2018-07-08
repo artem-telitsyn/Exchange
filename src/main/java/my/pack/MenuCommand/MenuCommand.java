@@ -21,8 +21,8 @@ public enum MenuCommand {
     private String description;
     private String command;
 
-    MenuCommand(String value, String command) {
-        this.description = value;
+    MenuCommand(String description, String command) {
+        this.description = description;
         this.command = command;
     }
 
@@ -34,45 +34,13 @@ public enum MenuCommand {
         return command;
     }
 
-    public MenuCommand findCommandByName(String command1) {
-        MenuCommand c = MenuCommand.valueOf(command1);
-        MenuCommand d = MenuCommand.valueOf(command1);
-        return MenuCommand.valueOf(command1);
-    }
-
-    public static MenuCommand getMenu(String command) {
-        switch (command) {
-            case "help":
-                return MenuCommand.HELP;
-            case "login":
-                return MenuCommand.LOGIN;
-            case "logout":
-                return MenuCommand.LOGOUT;
-            case "createAccount":
-                return MenuCommand.CREATE_ACCOUNT;
-            case "depositRub":
-                return MenuCommand.DEPOSIT_RUB;
-            case "accountStatusCurrency":
-                return MenuCommand.ACCOUNT_STATUS_CURRENCY;
-            case "exchangeRate":
-                return MenuCommand.EXCHANGE_RATE;
-            case "changeRate":
-                return MenuCommand.CHANGE_RATE;
-            case "purchaseCurrency":
-                return MenuCommand.PURCHASE_CURRENCY;
-            case "transactionHistory":
-                return MenuCommand.TRANSACTION_HISTORY;
-            case "transactionHistoryOrderByAmount":
-                return MenuCommand.TRANSACTION_HISTORY_ORDER_BY_AMOUNT;
-            case "transactionHistoryByLogin":
-                return MenuCommand.TRANSACTION_HISTORY_BY_LOGIN;
-            case "maxThreeTransaction":
-                return MenuCommand.MAX_THREE_TRANSACTION_OF_CLIENTS;
-            case "exit":
-                return MenuCommand.EXIT;
-            default:
-                return MenuCommand.DEFAULT;
+    public static MenuCommand findCommandByName(String consoleCommand) {
+        for (MenuCommand command : MenuCommand.values()){
+            if (command.command.equals(consoleCommand)) {
+                return command;
+            }
         }
+        return MenuCommand.DEFAULT;
     }
 }
 
