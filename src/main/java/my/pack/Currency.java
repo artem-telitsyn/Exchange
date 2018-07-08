@@ -1,21 +1,24 @@
 package my.pack;
 
 public enum Currency {
-    USD,
-    EUR,
-    RUB,
-    DEFAULT;
+    USD("USD"),
+    EUR("EUR"),
+    RUB("RUB"),
+    ALL("ALL"),
+    DEFAULT("DEFAULT");
 
-    public Currency getCurrency(String currency) {
-        switch (currency) {
-            case "USD":
-                return Currency.USD;
-            case "EUR":
-                return Currency.EUR;
-            case "RUB":
-                return Currency.RUB;
-            default:
-                return Currency.DEFAULT;
+    private String description;
+
+    Currency(String description) {
+        this.description = description;
+    }
+
+    public static Currency getCurrency(String currency) {
+        for (Currency cur : Currency.values()) {
+            if (cur.description.equals(currency)) {
+                return cur;
+            }
         }
+        return Currency.DEFAULT;
     }
 }

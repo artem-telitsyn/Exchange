@@ -3,22 +3,24 @@ package my.pack;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
+import static my.pack.Currency.*;
+
 public class ExchangeCurrency {
 
-    private HashMap<String, BigDecimal> currencyRate;
+    private HashMap<Currency, BigDecimal> currencyRate;
 
     public ExchangeCurrency (HashMap currencyRate) {
         this.currencyRate = currencyRate;
-        this.currencyRate.put("USD", BigDecimal.valueOf(60));
-        this.currencyRate.put("EUR", BigDecimal.valueOf(70));
-        this.currencyRate.put("RUB", BigDecimal.valueOf(1));
+        this.currencyRate.put(USD, BigDecimal.valueOf(60));
+        this.currencyRate.put(EUR, BigDecimal.valueOf(70));
+        this.currencyRate.put(RUB, BigDecimal.valueOf(1));
     }
 
-    public BigDecimal getCurrencyRate(String currency) {
+    public BigDecimal getCurrencyRate(Currency currency) {
         return currencyRate.get(currency);
     }
 
-    public void setCurrencyRate(String currency, BigDecimal currencyRate) {
+    public void setCurrencyRate(Currency currency, BigDecimal currencyRate) {
         if (getCurrencyRate(currency)!= null) {
             this.currencyRate.put(currency, currencyRate);
             getExchangeRate();
@@ -30,7 +32,7 @@ public class ExchangeCurrency {
 
     public void getExchangeRate() {
         System.out.println("Курс валют");
-        System.out.println("USD/RUR: " + currencyRate.get("USD"));
-        System.out.println("EUR/RUR: " + currencyRate.get("EUR"));
+        System.out.println(USD + "/" + RUB + ": " + currencyRate.get(USD));
+        System.out.println(EUR + "/" + RUB + ": " + currencyRate.get(EUR));
     }
 }

@@ -6,6 +6,8 @@ import my.pack.Account.AccountManager;
 
 import java.math.BigDecimal;
 
+import static my.pack.Currency.*;
+
 public class DepositCurrency {
 
     private ExchangeCurrency exchangeCurrency;
@@ -20,20 +22,20 @@ public class DepositCurrency {
         if (account != null) {
             BigDecimal amountOnAccount;
             AccountHistory accountHistory = new AccountHistory();
-            amountOnAccount = account.getAccountCurrency("RUB");
-            accountHistory.setCurrency("RUB");
+            amountOnAccount = account.getAccountCurrency(RUB);
+            accountHistory.setCurrency(RUB);
             accountHistory.setRate(BigDecimal.valueOf(1));
             accountHistory.setAmount(amount);
             accountHistory.setNote("Пополнение");
-            account.setAccountCurrency("RUB", amountOnAccount.add(amount));
+            account.setAccountCurrency(RUB, amountOnAccount.add(amount));
             account.setTransactionHistory(System.currentTimeMillis(), accountHistory);
-            System.out.println("Успешное пополнение счета на " + amount + " RUB");
+            System.out.println("Успешное пополнение счета на " + amount + " " + RUB);
         } else {
             System.out.println("Необходимо создать счет");
         }
     }
 
-    public void purchaseCurrency(Account account, BigDecimal amount, String firstCurrency, String secondCurrency) {
+    public void purchaseCurrency(Account account, BigDecimal amount, Currency firstCurrency, Currency secondCurrency) {
         BigDecimal amount2;
         if (account != null) {
             if ((account.getAccountCurrency(firstCurrency).compareTo(amount)) >= 0) {
@@ -42,7 +44,7 @@ public class DepositCurrency {
                     AccountHistory accountHistorySecondCurrency = new AccountHistory();
                     if (firstCurrency.equals(secondCurrency)) {
                         accountManager.getCurrentAccountCurrencyStatus(account, firstCurrency);
-                    } else if (firstCurrency.equals("RUB")) {
+                    } else if (firstCurrency.equals(RUB)) {
                         amount2 = amount.divide(exchangeCurrency.getCurrencyRate(secondCurrency), 2, 1);
                         accountHistoryFirstCurrency.setCurrency(firstCurrency);
                         accountHistoryFirstCurrency.setRate(exchangeCurrency.getCurrencyRate(firstCurrency));
@@ -56,8 +58,8 @@ public class DepositCurrency {
                         accountHistorySecondCurrency.setNote("Пополнение");
                         account.setAccountCurrency(secondCurrency, account.getAccountCurrency(secondCurrency).add(amount2));
                         account.setTransactionHistory(System.currentTimeMillis()+1, accountHistorySecondCurrency);
-                        accountManager.getCurrentAccountCurrencyStatus(account, "ALL");
-                    } else if (secondCurrency.equals("RUB")) {
+                        accountManager.getCurrentAccountCurrencyStatus(account, ALL);
+                    } else if (secondCurrency.equals(RUB)) {
                         amount2 = amount.multiply(exchangeCurrency.getCurrencyRate(firstCurrency));
                         accountHistoryFirstCurrency.setCurrency(firstCurrency);
                         accountHistoryFirstCurrency.setRate(exchangeCurrency.getCurrencyRate(firstCurrency));
@@ -70,7 +72,7 @@ public class DepositCurrency {
                         accountHistorySecondCurrency.setAmount(amount2);
                         accountHistorySecondCurrency.setNote("Пополнение");
                         account.setAccountCurrency(secondCurrency, account.getAccountCurrency(secondCurrency).add(amount2));
-                        accountManager.getCurrentAccountCurrencyStatus(account, "ALL");
+                        accountManager.getCurrentAccountCurrencyStatus(account, ALL);
                         account.setTransactionHistory(System.currentTimeMillis()+1, accountHistorySecondCurrency);
                     } else {
                         //Переводим в основную валюту рубли
@@ -88,7 +90,7 @@ public class DepositCurrency {
                         accountHistorySecondCurrency.setAmount(amount2);
                         accountHistorySecondCurrency.setNote("Пополнение");
                         account.setAccountCurrency(secondCurrency, account.getAccountCurrency(secondCurrency).add(amount2));
-                        accountManager.getCurrentAccountCurrencyStatus(account, "ALL");
+                        accountManager.getCurrentAccountCurrencyStatus(account, ALL);
                         account.setTransactionHistory(System.currentTimeMillis()+1, accountHistorySecondCurrency);
                     }
                 } else {

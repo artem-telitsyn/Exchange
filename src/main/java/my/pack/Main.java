@@ -20,6 +20,8 @@ public class Main {
         DateTime dateTime = new DateTime();
         History history = new History(dateTime);
         Account account = null;
+        PreActions preActions = new PreActions();
+        preActions.createAcounts(accountByLogin);
         Menu menu = new Menu(account, accountManager, history, new DepositCurrency(exchangeCurrency, accountManager),
                 exchangeCurrency, accountByLogin);
         InputReader inputReader = new InputReader();

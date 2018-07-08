@@ -12,7 +12,6 @@ public class Menu {
 
     private Account account;
     public static Permission accountPermission;
-    private MenuCommand menuCommand;
     private final HashMap accountByLogin;
     private final AccountManager accountManager;
     private History history;
@@ -91,7 +90,8 @@ public class Menu {
                     return true;
                 case ACCOUNT_STATUS_CURRENCY:
                     if (inputReaderDto.getParameter().size() >= 2) {
-                        accountManager.getCurrentAccountCurrencyStatus(account, inputReaderDto.getParameter().get(1));
+                        accountManager.getCurrentAccountCurrencyStatus(account,
+                                Currency.getCurrency(inputReaderDto.getParameter().get(1)));
                     } else {
                         System.out.println("Не указан параметр");
                     }
@@ -108,7 +108,7 @@ public class Menu {
                     return true;
                 case CHANGE_RATE:
                     if (inputReaderDto.getParameter().size() >= 3) {
-                        exchangeCurrency.setCurrencyRate(inputReaderDto.getParameter().get(1),
+                        exchangeCurrency.setCurrencyRate(Currency.getCurrency(inputReaderDto.getParameter().get(1)),
                                 amountCurrency(inputReaderDto.getParameter().get(2)));
                     } else {
                         System.out.println("Не указан одни из параметров");
@@ -117,7 +117,8 @@ public class Menu {
                 case PURCHASE_CURRENCY:
                     if (inputReaderDto.getParameter().size() >= 4) {
                         depositCurrency.purchaseCurrency(account, amountCurrency(inputReaderDto.getParameter().get(1)),
-                                inputReaderDto.getParameter().get(2), inputReaderDto.getParameter().get(3));
+                                Currency.getCurrency(inputReaderDto.getParameter().get(2)),
+                                Currency.getCurrency(inputReaderDto.getParameter().get(3)));
                     } else {
                         System.out.println("Не указан одни из параметров");
                     }

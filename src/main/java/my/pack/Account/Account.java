@@ -1,5 +1,6 @@
 package my.pack.Account;
 
+import my.pack.Currency;
 import my.pack.MenuCommand.Permission;
 
 import java.math.BigDecimal;
@@ -10,22 +11,22 @@ public class Account {
 
     private String login;
     private Permission role;
-    private HashMap<String, BigDecimal> accountCurrency;
+    private HashMap<Currency, BigDecimal> accountCurrency;
     private TreeMap<Long, AccountHistory> transactionHistory;
 
-    Account(HashMap<String, BigDecimal> accountCurrency, TreeMap<Long, AccountHistory> transactionHistory) {
+    public Account(HashMap<Currency, BigDecimal> accountCurrency, TreeMap<Long, AccountHistory> transactionHistory) {
         this.accountCurrency = accountCurrency;
-        this.accountCurrency.put("RUB", BigDecimal.valueOf(0));
-        this.accountCurrency.put("USD", BigDecimal.valueOf(0));
-        this.accountCurrency.put("EUR", BigDecimal.valueOf(0));
+        this.accountCurrency.put(Currency.RUB, BigDecimal.valueOf(0));
+        this.accountCurrency.put(Currency.USD, BigDecimal.valueOf(0));
+        this.accountCurrency.put(Currency.EUR, BigDecimal.valueOf(0));
         this.transactionHistory = transactionHistory;
     }
 
-    public BigDecimal getAccountCurrency(String currency) {
+    public BigDecimal getAccountCurrency(Currency currency) {
         return accountCurrency.get(currency);
     }
 
-    public void setAccountCurrency(String currency, BigDecimal amount) {
+    public void setAccountCurrency(Currency currency, BigDecimal amount) {
         this.accountCurrency.put(currency, amount);
     }
 
